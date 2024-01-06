@@ -14,12 +14,18 @@
     border-radius: 8px;
     padding: 1rem;
     font-size: 1rem;
-    color: var(--gray-300);
+    color: var(--gray-200);
     border: none;
 }
-.input:focus::placeholder{
-    
+.input::placeholder{
+    color: var(--gray-200);
 }
+.input:focus {
+    outline: 1px solid var(--purple-dark);
+    outline-offset: -1px;
+}
+
+
 .button{
     display: flex;
     background-color: var(--blue-dark);
@@ -35,6 +41,10 @@
     font-size: 1rem;
 }
 .button:hover{
-    background-color: var(--blue);
+    background-color: var(--blue); 
     cursor: pointer;
+}
+.button:disabled:hover{
+    cursor: not-allowed;
+    background-color: var(--blue-dark);
 }

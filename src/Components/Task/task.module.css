@@ -9,8 +9,22 @@
 .info {
     display: flex;
     justify-content: space-between;
-    width: 736px;
-    height: 19px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 16px;
+}
+
+@media (min-width: 600px) {
+    .info {
+        max-width: 600px; 
+    }
+}
+
+@media (min-width: 768px) {
+    .info {
+        max-width: 736px;
+        min-width: 300px;
+    }
 }
 
 .taskCreate {
@@ -50,9 +64,24 @@
     flex-direction: column;
     margin-top: 24px;
     border-top: 1px solid var(--gray-400);
-    width: 736px;
+    width: 100%;
+    max-width: 100%;
     border-radius: 8px;
 }
+
+@media (min-width: 600px) {
+    .content {
+        max-width: 600px; 
+    }
+}
+
+@media (min-width: 768px) {
+    .content {
+        max-width: 736px;
+        min-width: 300px;
+    }
+}
+
 
 .content img {
     margin-top: 64px;
@@ -68,23 +97,33 @@
 .content>strong>p {
     font-weight: bold;
 }
+.content>strong> span {
+    font-weight: 300;
+}
 
 .list {
     margin-top: 24px;
     display: flex;
     width: 736px;
-    background-color: var(--gray-400);
+    background-color: var(--gray-500);
     padding: 16px 16px;
     border-radius: 8px;
     min-height: 72px;
     gap: 0.6rem;
     align-items: flex-start;
+    justify-content: space-between;
+    text-align: start;
+    flex-direction: row;
+    border: 1px solid var(--gray-400);
+    outline-offset: 1px;
 }
 
 .descriptionTask {
     line-height: 140%;
     color: var(--gray-100);
     font-size: 14px;
+    display: flex;
+    flex: 1;
 }
 
 .checkbox {
@@ -97,10 +136,10 @@
 }
 
 .icon {
-    display: flex;
+    display: block;
     width: 24px;
     height: 24px;
-    padding: 5px 5.522px 5px 6px;
+    padding: 4px 5px;
     justify-content: center;
     align-items: center;
     color: var(--gray-300);
@@ -108,7 +147,8 @@
 
 .icon:hover {
     border-radius: 4px;
-    background: var(--gray-500);
+    background: var(--gray-400);
     cursor: pointer;
     color: var(--danger);
+    transition: 0.3s;
 }
